@@ -10,21 +10,31 @@ function currentDay(){
 }
 
 function bgColor(){
-    
+    //Get the current hour
     var currentHour = actualDate.hour;
     
     for(var i = 9; i<= 17; i++){
-        
+        //Makes the actual hour background green
         if (currentHour == i){
-            $("#task-"+i).addClass("bg-success");
+            $("#hour-"+i).addClass("bg-success");
         }
+        //Makes the past hours upcoming red
         else if(currentHour < i){
-            $("#task-"+i).addClass("bg-danger");
+            $("#hour-"+i).addClass("bg-danger");
         }
+        //Makes the past hours background 
         else if(currentHour > i){
-            $("#task-"+i).addClass("bg-secondary");
-        }
-        
+            $("#hour-"+i).addClass("bg-secondary");
+        }        
+    }
+    
+}
+
+function taskManager(){
+    for(var i = 9; i<= 17; i++){
+        $( "#hour-"+i).on("click", "p", function() {
+            console.log("<p> was clicked");
+          });
     }
     
 }
@@ -32,8 +42,6 @@ function bgColor(){
 
 
 
-
-
-
 currentDay();
 bgColor();
+taskManager();
