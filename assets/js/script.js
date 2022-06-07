@@ -2,6 +2,19 @@ var DateTime = luxon.DateTime;
 //Gets the actual date and hour
 var actualDate = DateTime.now();
 
+
+tasks ={
+    task_9:"",
+    task_10:"",
+    task_11:"",
+    task_12:"",
+    task_13:"",
+    task_14:"",
+    task_15:"",
+    task_16:"",
+    task_17:""
+};
+
 function currentDay(){
     //Sets the format
     var currentDate = actualDate.toLocaleString(DateTime.DATE_HUGE);
@@ -38,13 +51,15 @@ $(".wrap").on("click", "i", function() {
     var taskNumber = this.id.slice(-2);
     if(taskNumber == "-9"){
         actualTask = $("#hour-9");
+        tasks.task_9 = actualTask.val();
     }
-
     else{
         actualTask = $("#hour-"+taskNumber);
-    }
-
-    console.log(actualTask)    
+        var taskNumberObj = "task_"+ taskNumber;
+        tasks[taskNumberObj] = actualTask.val();
+    }   
+    
+    // console.log(tasks)    
     
   });
 
