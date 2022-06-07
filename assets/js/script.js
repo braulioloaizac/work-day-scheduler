@@ -31,11 +31,20 @@ function bgColor(){
 }
 
 
-$(".row").on("click", "div", function() {
-    var getClass = this.className;
-    
-    
-    
+//Look for the task from what the button was clicked
+$(".wrap").on("click", "i", function() {
+
+    //Get the last two elements of the current id string
+    var taskNumber = this.id.slice(-2);
+    if(taskNumber == "-9"){
+        actualTask = $("#hour-9");
+    }
+
+    else{
+        actualTask = $("#hour-"+taskNumber);
+    }
+
+    console.log(actualTask)    
     
   });
 
