@@ -2,19 +2,6 @@ var DateTime = luxon.DateTime;
 //Gets the actual date and hour
 var actualDate = DateTime.now();
 
-
-tasks ={
-    task_9:"",
-    task_10:"",
-    task_11:"",
-    task_12:"",
-    task_13:"",
-    task_14:"",
-    task_15:"",
-    task_16:"",
-    task_17:""
-};
-
 function currentDay(){
     //Sets the format
     var currentDate = actualDate.toLocaleString(DateTime.DATE_HUGE);
@@ -43,24 +30,46 @@ function bgColor(){
     
 }
 
+var task_9 = "";
+var task_10 = "";
+var task_11 = "";
+var task_12 = "";
+var task_13 = "";
+var task_14 = "";
+var task_15 = "";
+var task_16 = "";
+var task_17 = "";
+
+//Loads the tasks from localstorage
+function loadTasks(){
+    for(i = 9; i <= 17; i++){
+        var task = localStorage.getItem('task_'+i);
+        $("#hour-"+i).text(task)
+    }
+    
+}
+
 
 //Look for the task from what the button was clicked
 $(".wrap").on("click", "i", function() {
 
     //Get the last two elements of the current id string
     var taskNumber = this.id.slice(-2);
+    //Condition for 9 because i has only one number
     if(taskNumber == "-9"){
         actualTask = $("#hour-9");
-        tasks.task_9 = actualTask.val();
+        task_9 = actualTask.val();
+        //Saves the text on local storage
+        localStorage.setItem('task_9',task_9);
     }
     else{
         actualTask = $("#hour-"+taskNumber);
         var taskNumberObj = "task_"+ taskNumber;
-        tasks[taskNumberObj] = actualTask.val();
+        //Gets the text from the textarea
+        taskNumberObj = actualTask.val()
+        //Saves the text on local storage
+        localStorage.setItem('task_'+taskNumber,taskNumberObj);
     }   
-    
-    // console.log(tasks)    
-    
   });
 
 
@@ -68,4 +77,5 @@ $(".wrap").on("click", "i", function() {
 
 currentDay();
 bgColor();
+loadTasks();
 
