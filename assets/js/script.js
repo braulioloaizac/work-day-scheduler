@@ -1,6 +1,6 @@
 var DateTime = luxon.DateTime;
 //Gets the actual date and hour
-var actualDate = DateTime.now();
+var actualDate = DateTime.local();
 
 function currentDay(){
     //Sets the format
@@ -18,11 +18,11 @@ function bgColor(){
         if (currentHour == i){
             $("#hour-"+i).addClass("bg-success");
         }
-        //Makes the past hours upcoming red
+        //Makes the past hours background  red
         else if(currentHour < i){
             $("#hour-"+i).addClass("bg-danger");
         }
-        //Makes the past hours background 
+        //Makes the upcoming hours background 
         else if(currentHour > i){
             $("#hour-"+i).addClass("bg-secondary");
         }        
