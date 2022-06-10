@@ -5,6 +5,6 @@ In this project the main objective is develop a scheluder for the daily tasks in
 ## Logic behind the code
 
 From a starter code provided by the instructor the first thing to add was the current date, for that we used the luxon API that manages time and dates in real time, with that we are able to show the day, month and the year.
-The next issue was show the current, past and future hours with colors
+The next issue was show the current, past and future hours with colors inside the tasks fields, for that again we used the same API to get the current hour and 
 
  
