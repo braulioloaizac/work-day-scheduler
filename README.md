@@ -9,7 +9,7 @@ The next issue was, show the current, past and future hours with colors inside t
 For the next step we had to make the time blocks editable and when the user clicks on the save button the content is going to be saved on the localStorage , for that we used the jqery library and the event delegation definition (to associate the save button to each time block) and asign the content to an array that is going to be saved on the localStorage and when the page loads again it gets the localStorage data and displays it on the time block.
 
 Here's a sreenshot of the app
-![alt text](./snapshot.png "snapshot")
+![alt text](./screenshot.png "snapshot")
 
 And here's the app link
 https://braulioloaizac.github.io/work-day-scheduler/
